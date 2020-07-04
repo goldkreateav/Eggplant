@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <title>Eggplant</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        {% include 'menu.html' %}
+        <br><br>
+        <form method="POST" action="where">
+            {% csrf_token %}
+            <div class="BigBlock" style="width:300px;height: 800px">
+                <h4 style="text-align:center;width:200px; color: #49152C;">Выберите тип листа</h4>
+                <p style="text-align:center;width:200px; color: #49152C;">A4</p>
+                <input type="radio" name="list" checked="1" value=1 style="width:200px; colo    r: #49152C;
+                background: linear-gradient(135deg, #8a2be2 1%, #a366ff 99%);">
+                <p style="text-align:center;width:200px; color: #49152C;">A3</p>
+                <input type="radio" name="list" value=2 style="width:200px; color: #49152C;
+                background: linear-gradient(135deg, #8a2be2 1%, #a366ff 99%);">
+                <p></p>
+                <input type="file" name="file">
+                <p></p>
+                <input type="submit" svalue='Отправить' style="width:200px; height: 70px; color: #49152C;
+                background: linear-gradient(135deg, #8a2be2 1%, #a366ff 99%);">
+            </div>
+        </form>
+    </body>
+</html>

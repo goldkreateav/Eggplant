@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <title>Eggplant</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        {% include 'menu.html' %}
+        <div class="BigBlock" style="width:450px;height: 180px">
+            {% for i in orders %}
+                {{i.file}}
+            {% endfor %}
+        </div>
+    </body>
+</html>

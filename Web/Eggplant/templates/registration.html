@@ -10,11 +10,18 @@
         {% include 'menu.html' %}
         <form method="POST">
             {% csrf_token %}
-            <div class="BigBlock" style="width:300px;height: 180px">
+            <div class="BigBlock" style="width:300px;height: 400px">
                 <input type="text" name="login" placeholder="Логин" style="width:200px;color: #49152C;
                 background: linear-gradient(135deg, #8a2be2 1%, #a366ff 99%);">
                 <input type="password" name="password" placeholder="Пароль" style="width:200px; color: #49152C;
                 background: linear-gradient(135deg, #8a2be2 1%, #a366ff 99%);">
+                <p style="text-align:center;width:200px; color: #49152C;">Пользователь</p>
+                <input type="radio" name="type" checked="1" value=1 style="width:200px; colo    r: #49152C;
+                background: linear-gradient(135deg, #8a2be2 1%, #a366ff 99%);">
+                <p style="text-align:center;width:200px; color: #49152C;">Партнёр</p>
+                <input type="radio" name="type" value=2 style="width:200px; color: #49152C;
+                background: linear-gradient(135deg, #8a2be2 1%, #a366ff 99%);">
+
                 <input class="button" type="submit">
             </div>
         </form>

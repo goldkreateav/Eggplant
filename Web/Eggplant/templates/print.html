@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8">
+        <title>Eggplant</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        {% include 'menu.html' %}
+        <br><br>
+        {% if not ok %}
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="BigBlock" style="width:300px;height: 1000px">
+                <h4 style="text-align:center;width:200px; color: #49152C;">Выберите тип листа</h4>
+                <p style="text-align:center;width:200px; color: #49152C;">A4</p>
+                <input type="radio" name="list" checked="1" value=1 style="width:200px; colo    r: #49152C;
+                background: linear-gradient(135deg, #8a2be2 1%, #a366ff 99%);">
+                <p style="text-align:center;width:200px; color: #49152C;">A3</p>
+                <input type="radio" name="list" value=2 style="width:200px; color: #49152C;
+                background: linear-gradient(135deg, #8a2be2 1%, #a366ff 99%);">
+                <h4 style="text-align:center;width:200px; color: #49152C;">Выберите тип распечатки</h4>
+                <p style="text-align:center;width:200px; color: #49152C;">Цветной</p>
+                <input type="radio" name="color" checked="1" value=1 style="width:200px; colo    r: #49152C;
+                background: linear-gradient(135deg, #8a2be2 1%, #a366ff 99%);">
+                <p style="text-align:center;width:200px; color: #49152C;">Черно-белый</p>
+                <input type="radio" name="color" value=2 style="width:200px; color: #49152C;
+                background: linear-gradient(135deg, #8a2be2 1%, #a366ff 99%);">
+                <h4 style="text-align:center;width:200px; color: #49152C;">Выберите место получения</h4>
+                <p style="text-align:center;width:200px; color: #49152C;">Ивантеевка</p>
+                <input type="radio" name="where" checked="1" value=2 style="width:200px; colo    r: #49152C;
+                background: linear-gradient(135deg, #8a2be2 1%, #a366ff 99%);">
+                <p></p>
+                <input type="file" name="file">
+                <p></p>
+                <input type="submit" value='Отправить' style="width:200px; height: 70px; color: #49152C;
+                background: linear-gradient(135deg, #8a2be2 1%, #a366ff 99%);">
+            </div>
+        </form>
+    {% endif %}
+
+    </body>
+</html>
